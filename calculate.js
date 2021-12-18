@@ -10,11 +10,13 @@ for (order of allOrders){
     let vendor = order.querySelector('span[class="vendor-name"]').innerText;
     let whatOrder = order.querySelector('div[class="order-product-list"]').innerText;
     let isCancel = order.lastElementChild.querySelector('div [class="order-status"]');
+    noOfOrder++;
     if(isCancel == null){
     totalspend += totalspend_temp;
-    noOfOrder++;
     totalspendrounded = toRound(totalspend);
     console.log(`order ${noOfOrder} : (${vendor}) - ${whatOrder}, MYR${totalspend_temp}`);
+    } else {
+        console.log(`order ${noOfOrder} : cancelled`);
     }
 }
 
